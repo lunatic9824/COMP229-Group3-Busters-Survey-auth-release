@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') -%>
+
+    <div class="container">
+
+      <% if(title == "Home"){ %>
+        <%-include partials/home.ejs %>
+      <% } %>
+      <% if(title == 'Survey List') { %>
+        <%- include('./survey/list.ejs') -%> 
+      <% } else if(title == 'Add Component') { %>
+        <%- include('./survey/add_edit.ejs') -%> 
+      <% } else if(title == 'Edit Component') { %>
+        <%- include('./survey/add_edit.ejs') -%> 
+      <% } %>
+      
+    </div>
+    
+<%- include('./partials/footer.ejs') -%>
+    
+
+    

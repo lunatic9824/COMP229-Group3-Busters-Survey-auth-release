@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') -%>
+
+    <div class="container">
+
+        <div class="jumbotron">
+          <h1 class="display-4"><%= title %></h1>
+      </div>
+
+      <% if(title == 'Survey List') { %>
+        <%- include('./survey/list.ejs') -%> 
+      <% } else if(title == 'Add Component') { %>
+        <%- include('./survey/add_edit.ejs') -%> 
+      <% } else if(title == 'Edit Component') { %>
+        <%- include('./survey/add_edit.ejs') -%> 
+      <% } %>
+
+
+
+
+    </div>
+    
+<%- include('./partials/footer.ejs') -%>
+    
+
+    
