@@ -20,6 +20,7 @@ module.exports.surveyList = function(req, res, next) {
         {
             res.render('survey/list', {
                 title: 'Survey List', 
+                displayName: req.user ? req.user.displayName : '',
                 surveys: surveyList
             })            
         }
@@ -42,6 +43,7 @@ module.exports.details = (req, res, next) => {
             //show the edit view
             res.render('survey/details', {
                 title: 'Survey Details', 
+                displayName: req.user ? req.user.displayName : '',
                 surveys: surveyToShow
             })
         }
@@ -55,7 +57,8 @@ module.exports.displayAddPage = (req, res, next) => {
 
     res.render('survey/add_edit',{
         title : 'Add a new Survey',
-        survey: newSurvey
+        survey: newSurvey,
+        displayName: req.user ? req.user.displayName : ''
     })
     
 }
@@ -106,6 +109,7 @@ module.exports.displayEditPage = (req, res, next) => {
             res.render('survey/add_edit', {
                 title: 'Edit Survey', 
                 survey: editSurvey,
+                displayName: req.user ? req.user.displayName : ''
                 
             })
         }
